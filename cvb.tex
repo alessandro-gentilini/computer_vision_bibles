@@ -1,0 +1,52 @@
+
+
+\documentclass[british,a4paper]{scrartcl}
+\usepackage{filecontents}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage[autostyle=true]{csquotes}
+\usepackage[style=authoryear, backend=biber, datamodel=mydm]{biblatex}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+
+% http://tex.stackexchange.com/questions/166414/including-cover-pictures-in-bibliography
+\newcommand*{\insertbibimage}[1]{\includegraphics[width=100px, keepaspectratio]{#1}}
+\renewbibmacro*{finentry}{\finentry
+  \iffieldundef{thumbnail}
+    {}
+    {\\\usefield{\insertbibimage}{thumbnail}}}
+
+\begin{filecontents*}{\jobname.bib}
+@book{Haralick:1992:CRV:573190,
+ author = {Haralick, Robert M. and Shapiro, Linda G.},
+ title = {Computer and Robot Vision},
+ year = {1992},
+ isbn = {0201569434},
+ edition = {1st},
+ publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+ address = {Boston, MA, USA},
+ thumbnail = {haralick_shapiro.png}
+} 
+
+@book{Szeliski:2010:CVA:1941882,
+ author = {Szeliski, Richard},
+ title = {Computer Vision: Algorithms and Applications},
+ year = {2010},
+ isbn = {1848829345, 9781848829343},
+ edition = {1st},
+ publisher = {Springer-Verlag New York, Inc.},
+ address = {New York, NY, USA},
+ thumbnail = {szeliski_2010.png}
+} 
+
+\end{filecontents*}
+
+\addbibresource{\jobname.bib}
+
+\begin{document}
+  \nocite{*}
+  \printbibliography
+\end{document}
