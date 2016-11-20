@@ -1,5 +1,5 @@
 # Computer Vision Bibles
 
 
-[A Computer Vision bibliography](https://www.sharelatex.com/github/repos/Muffo/computer_vision_bibles/builds/latest/output.pdf)
+[A Computer Vision bibliography](https://github.com/alessandro-gentilini/computer_vision_bibles/blob/master/cvb.pdf)
 
